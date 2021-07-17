@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
 import classNames from 'classnames';
 
+
 const SORTS = {
     NONE: list => list,
     TITLE: list => sortBy(list, 'title'),
@@ -14,30 +15,28 @@ const SORTS = {
     COMMENTS: list => sortBy(list, 'num_comments').reverse(),
     POINTS: list => sortBy(list, 'points').reverse(),
 }
+ const DEFAULT_QUERY = 'redux';
+ const DEFAULT_HPP = '100';
 
-const DEFAULT_QUERY = 'redux';
-const DEFAULT_HPP = '100';
+ const PATH_BASE = 'https://hn.algolia.com/api/v1';
+ const PATH_SEARCH = '/search';
+ const PARAM_SEARCH = 'query=';
+ const PARAM_PAGE = 'page=';
+ const PARAM_HPP = 'hitsPerPage=';
 
-const PATH_BASE = 'https://hn.algolia.com/api/v1';
-const PATH_SEARCH = '/search';
-const PARAM_SEARCH = 'query=';
-const PARAM_PAGE = 'page=';
-const PARAM_HPP = 'hitsPerPage=';
-const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}&${PARAM_PAGE}`;
-
-const largeColumn = {
+ const largeColumn = {
     width : '40%',
 };
 
-const midColumn = {
+ const midColumn = {
     width : '30%',
 };
 
-const smallColumn = {
+ const smallColumn = {
     width : '10%',
 };
 
-const list = [{
+ const list = [{
   title: 'React',
   url: 'https://reactjs.org',
   author: 'Jordan Walke',
@@ -52,6 +51,7 @@ const list = [{
   points: 5,
   objectID: 1,
 }]
+const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}&${PARAM_PAGE}`;
 
 const isSearched = searchTerm => item =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase());
