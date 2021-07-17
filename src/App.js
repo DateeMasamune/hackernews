@@ -5,7 +5,6 @@ import axios from 'axios';
 import { rest, result } from 'lodash';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
-import classNames from 'classnames';
 import {
     DEFAULT_QUERY,
     DEFAULT_HPP,
@@ -19,9 +18,10 @@ import {
     smallColumn,
     list
 } from './constant';
-import Button from './components/button';
 import Loading from './components/loading';
 import Search from './components/search';
+import Sort from './components/sort';
+import Button from './components/button';
 
 
 const SORTS = {
@@ -291,28 +291,5 @@ const withLoading = (Component) => ({ isLoading, ...rest }) =>
 
 const ButtonWithLoading = withLoading(Button); // Компонент высшего порядка который принимает другой компонент и возвращает компонент
 
-const Sort = ({ sortKey, onSort, children, activeSortKey }) => {
-
-    const sortClass = classNames(
-        'button-inline',
-        {'button-active': sortKey === activeSortKey}
-    );
-
-    return(
-        <Button
-            onClick = {() => onSort(sortKey)}
-            className = {sortClass}
-        >
-            {children}
-        </Button>
-    )
-}
-    
-
 export default App;
 
-export {
-    Button,
-    Search,
-    Table,
-};
