@@ -13,10 +13,9 @@ import {
     PARAM_PAGE,
     PARAM_HPP,
 } from './constant';
-import Loading from './components/loading';
 import Search from './components/search';
-import Button from './components/button';
 import Table from './components/table';
+import ButtonWithLoading from './components/buttonwithLoading';
 
 const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}&${PARAM_PAGE}`;
 
@@ -174,13 +173,6 @@ class App extends Component {
         );
     }    
 }
-
-const withLoading = (Component) => ({ isLoading, ...rest }) =>
-    isLoading
-        ?<Loading/>
-        :<Component {...rest}/>
-
-const ButtonWithLoading = withLoading(Button); // Компонент высшего порядка который принимает другой компонент и возвращает компонент
 
 export default App;
 
