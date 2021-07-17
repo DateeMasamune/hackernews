@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App есть корректный снимок 1`] = `
+<div
+  className="page"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <div
+      className="interactions"
+    >
+      <div
+        className="searchComponent"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            name="item_title"
+            onChange={[Function]}
+            type="text"
+            value="redux"
+          />
+          <button
+            type="submit"
+          >
+            Поиск
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      className="table"
+    />
+    <div
+      className="interactions"
+    >
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Больше историй
+      </button>
+    </div>
+    <h2
+      className="App-title"
+    />
+  </header>
+</div>
+`;
